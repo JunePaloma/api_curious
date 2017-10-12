@@ -5,23 +5,27 @@ feature "On a logged in user landing page" do
     visit root_path
     mock_auth_hash
     click_on("Login")
-    expect(page).to have_content("followers")
+    expect(page).to have_content("1 followers")
+    expect(page).to have_content("0 following")
+
+
   end
-end
 
 
 
 
 
-
-it "and view a summary of recent commits" do
-end
-
-it  "and view a summary of revent activity from users I follow" do
-end
-
-it "and view a list of organizations I am a member of" do
-end
-
-it "and see a list of my repos" do
+#
+#
+# it "and view a summary of recent commits" do
+# end
+#
+# it  "and view a summary of revent activity from users I follow" do
+# end
+#
+# it "and view a list of organizations I am a member of" do
+# end
+#
+# it "and see a list of my repos" do
+# end
 end

@@ -1,15 +1,15 @@
 class HomeController < ApplicationController
   def index
-    conn = Faraday.new(url: 'https://api.github.com') do |faraday|
-      faraday.adapter Faraday.default_adapter
-    end
-    conn.headers["Authorization"] = "token #{current_user.token}"
-    response = conn.get("/user")
-    @users_stuff = JSON.parse(response.body)
-    @repos = @users_stuff["repos_url"]
+    binding.pry
+    @followers_json = GithubService.new(current_user).user_followers
+    binding.pry
   end
 
 end
 
-# "Authorization: token OAUTH-TOKEN"
-# 'https://api.github.com'
+
+# conn = Faraday.new(url: 'https://api.github.com') do |faraday|
+#   faraday.adapter Faraday.default_adapter
+# end
+# conn.headers["Authorization"] = "token #{current_user.token}"
+# response = conn.get("/user")

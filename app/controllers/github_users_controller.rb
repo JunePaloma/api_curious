@@ -1,4 +1,7 @@
 class GithubUsersController < ApplicationController
-  def show
+  def index
+    
+
   end
+
 end
